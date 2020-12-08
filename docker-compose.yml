@@ -1,0 +1,27 @@
+version: '3'
+services:
+  gateway:
+    image: gateway
+    build: ./Gateway/target/
+    ports:
+     - "8080:8080"
+  servicediscovery:
+    image: servicediscovery
+    build: ./ServiceDiscovery/target/
+    ports:
+     - "8761:8761"
+  meetingservice:
+    image: meetingservice
+    build: ./MeetingService/target/
+    ports:
+      - "8083:8083"
+  articleservice:
+    image: article
+    build: ./Article-Service/target/
+    ports:
+      - "8082:8082"
+  authenticationservice:
+    image: authentication
+    build: ./AuthenticationService/target/
+    ports:
+      - "8081:8081"
